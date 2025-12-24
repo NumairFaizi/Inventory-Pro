@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+dist/
+build/
+
+# Environment Variables
+.env
+.env.local
+
+# Database / Local Storage
+data/
+*.db
+*.sqlite
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+
+# Excel/JSON Backups (Local only)
+*.xlsx
+*.json
+!package.json

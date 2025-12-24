@@ -1,0 +1,17 @@
+{
+  "name": "inventory-app-desktop",
+  "version": "1.0.0",
+  "main": "electron-main.js",
+  "scripts": {
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run start --prefix backend\" \"wait-on http://localhost:5173 && electron .\"",
+    "build-frontend": "cd frontend && npm run build",
+    "package": "npm run build-frontend && electron-builder"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.9.1",
+    "wait-on": "^7.2.0"
+  }
+}

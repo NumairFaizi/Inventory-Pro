@@ -24,17 +24,17 @@ const Footer = () => {
                         <div className="flex flex-col items-center md:items-end">
                             <span className="text-gray-500 text-[10px] font-bold uppercase mb-1">Get Support</span>
                             <a 
-                                href="mailto:support@example.com" 
+                                href="mailto:numairfaizee@gmail.com" 
                                 className="text-gray-300 hover:text-blue-400 transition-colors flex items-center gap-2"
                             >
-                                <span>📧</span> numair.faizi@example.com
+                                <span>📧</span> numairfaizee@gmail.com
                             </a>
                         </div>
                         
                         <div className="flex flex-col items-center md:items-end border-l border-gray-700 pl-6">
                             <span className="text-gray-500 text-[10px] font-bold uppercase mb-1">Developer</span>
                             <a 
-                                href="https://github.com/numairfaizi" 
+                                href="https://numairfaizi.netlify.app/" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"

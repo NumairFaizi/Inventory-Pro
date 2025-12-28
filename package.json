@@ -1,17 +1,67 @@
 {
-  "name": "inventory-app-desktop",
+  "name": "inventory-pro",
   "version": "1.0.0",
-  "main": "electron-main.js",
+  "author": "Numair Faizi",
+  "description": "Best Solution for Inventory management by numair Faizi",
+  "main": "main.js",
+  "type": "commonjs",
   "scripts": {
-    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run start --prefix backend\" \"wait-on http://localhost:5173 && electron .\"",
-    "build-frontend": "cd frontend && npm run build",
-    "package": "npm run build-frontend && electron-builder"
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.5",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2",
-    "electron": "^28.3.3",
-    "electron-builder": "^24.13.3",
-    "wait-on": "^7.2.0"
+    "electron": "^33.2.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.numairfaizi.inventorypro",
+    "productName": "Inventory Pro",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "uninstallDisplayName": "Remove Inventory Pro",
+      "installerSidebar": "build/i.bmp",
+      "uninstallerSidebar": "build/u.bmp",
+      "runAfterFinish": true
+    },
+    "files": [
+      "main.js",
+      "server.js",
+      "constants.js",
+      "package.json",
+      "frontend/dist/**/*",
+      "backend/**/*",
+      "node_modules/**/*",
+      ".env",
+      "splash.html",
+      "splash.png"
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "server.js",
+      "backend/**/*",
+      "node_modules/**/*"
+    ]
   }
 }

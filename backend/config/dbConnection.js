@@ -2,14 +2,15 @@ const mongoose = require("mongoose");
 
 const connectDb = async () => {
     try {
-        const connString = process.env.CONNECTION_STRING;
+        // Use the environment variable if found, otherwise use the local fallback
+        const connString = process.env.CONNECTION_STRING || "mongodb://127.0.0.1:27017/inventory_pro";
         
-        if (!connString) {
-            console.error("Error: CONNECTION_STRING is missing in .env file");
-            process.exit(1);
-        }
-
-        const connect = await mongoose.connect(connString);
+        console.log("Attempting to connect to database..."); 
+        
+        const connect = await mongoose.connect(connString, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
         
         console.log(
             "Database Connected Successfully:", 
@@ -17,9 +18,9 @@ const connectDb = async () => {
             connect.connection.name
         );
     } catch (err) {
+        // This error will be caught and written to your backend-log.txt
         console.error("Database Connection Failed:", err.message);
-        // In a desktop app, we want to exit if the DB isn't available
-        process.exit(1);
+        process.exit(1); 
     }
 }
 

@@ -55,13 +55,16 @@
       "node_modules/**/*",
       ".env",
       "splash.html",
-      "splash.png"
+      "build/splash.png",
+      "build/icon.ico"
     ],
     "asar": true,
     "asarUnpack": [
       "server.js",
       "backend/**/*",
-      "node_modules/**/*"
+      "node_modules/**/*",
+      "splash.png",
+      "splash.html"
     ]
   }
 }

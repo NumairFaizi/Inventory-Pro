@@ -46,7 +46,8 @@ function createWindow() {
         height: 350,
         transparent: true, // Allows for rounded corners and shadows
         frame: false,       // Removes standard Windows borders
-        alwaysOnTop: true,  // Keeps it visible over other apps
+        alwaysOnTop: true,
+        icon: path.join(__dirname, 'build/icon.ico'),
         webPreferences: {
             nodeIntegration: false
         }

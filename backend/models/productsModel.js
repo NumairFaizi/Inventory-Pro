@@ -28,7 +28,7 @@ const productsSchema = mongoose.Schema({
         min: [0, "Price cannot be negative"]
     },
 }, {
-    timestamps: true // Tracks when products were added or updated
+    timestamps: true
 });
 
 module.exports = mongoose.model("Product", productsSchema);

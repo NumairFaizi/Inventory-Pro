@@ -19,10 +19,13 @@
 
         .bg-image {
             position: absolute;
-
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover; /* Ensures it fills the window perfectly */
             z-index: -1;
-            opacity: 1.0; 
+            opacity: 0.6; 
         }
 
         .container { 
@@ -38,15 +41,9 @@
     </style>
 </head>
 <body>
-    <img src="splash.png" class="bg-image">
+    <img src="build/splash.png" class="bg-image">
 
-    <div class="container">
-        <h1>Inventory Pro</h1>
-        <p class="author">Developed by Numair Faizi</p>
-        <div class="progress-container">
-            <div class="progress-bar"></div>
-        </div>
-        <p style="font-size: 11px; margin-top: 15px; color: #888;">Starting Backend Services...</p>
+
     </div>
 </body>
 </html>
